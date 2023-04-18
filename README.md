@@ -1,24 +1,25 @@
-# OpenIddict documentation
+# OpenIddict 简体中文文档
 
-This repository provides the documentation for the [OpenIddict](https://github.com/openiddict) project.
+此存储库提供了 [OpenIddict](https://github.com/openiddict) 项目的文档。
 
-## Security policy
+## 安全策略
 
-Security issues and bugs should be reported privately by emailing security@openiddict.com.
-You should receive a response within 24 hours. If for some reason you do not, please follow up via email to ensure we received your original message.
+安全问题和漏洞应该通过发送电子邮件至security@openiddict.com进行私下报告。
+您应该在24小时内收到回复。如果由于某些原因您没有收到回复，请通过电子邮件跟进以确保我们收到了您的原始消息。
 
-## Support
+## 支持
 
-If you need support, please make sure you [sponsor the project](https://github.com/sponsors/kevinchalet) before creating a GitHub ticket.
-If you're not a sponsor, you can post your questions on Gitter or StackOverflow:
+如果需要支持，请在创建 GitHub 工单之前确保 [赞助该项目](https://github.com/sponsors/kevinchalet) .
+如果您不是赞助者，可以在 Gitter 或 StackOverflow 上发布您的问题：
 
 - **Gitter: [https://gitter.im/openiddict/openiddict-core](https://gitter.im/openiddict/openiddict-core)**
 - **StackOverflow: [https://stackoverflow.com/questions/tagged/openiddict](https://stackoverflow.com/questions/tagged/openiddict)**
 
-## Contributors
+## 贡献者
 
-**OpenIddict** is actively maintained by **[Kévin Chalet](https://github.com/kevinchalet)**. Contributions are welcome and can be submitted using pull requests.
+**OpenIddict** 由 **[Kévin Chalet](https://github.com/kevinchalet)** 积极维护。 欢迎贡献。可以使用 pull requests 提交。
 
 ## License
 
-This project is licensed under the **Apache License**. This means that you can use, modify and distribute it freely. See [http://www.apache.org/licenses/LICENSE-2.0.html](http://www.apache.org/licenses/LICENSE-2.0.html) for more details.
+该项目使用 **Apache 许可证** 进行许可。这意味着您可以自由使用、修改和分发该项目。
+更多详情请参见 [http://www.apache.org/licenses/LICENSE-2.0.html](http://www.apache.org/licenses/LICENSE-2.0.html) 。
