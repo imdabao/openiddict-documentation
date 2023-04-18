@@ -1,25 +1,25 @@
-- name: Introduction
+- name: 介绍
   href: index.md
 
-- name: Contributing a new Web provider
+- name: 贡献新的 Web 提供程序
   href: contributing-a-new-web-provider.md
 
-- name: Getting started
+- name: 快速上手
   href: getting-started.md
 
-- name: Choosing the right flow
+- name: 选择合适的流程
   href: choosing-the-right-flow.md
 
-- name: Migration guides
+- name: 迁移指南
   items:
-    - name: Migration from 2.0 to 3.0
+    - name: 从 2.0 迁移到 3.0
       href: migration/20-to-30.md
-    - name: Migration from 3.0 to 4.0
+    - name: 从 3.0 迁移到 4.0
       href: migration/30-to-40.md
 
-- name: External resources
+- name: 外部资源
   items:
-    - name: OAuth 2.0 specification
+    - name: OAuth 2.0 规范
       href: https://tools.ietf.org/html/rfc6749
-    - name: OpenID Connect specification
+    - name: OpenID Connect 规范
       href: https://openid.net/specs/openid-connect-core-1_0.html

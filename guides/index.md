@@ -1,4 +1,4 @@
-## What's OpenIddict?
+## 什么是 OpenIddict?
 
 OpenIddict is **an open source and versatile framework for building standard-compliant OAuth 2.0/OpenID Connect servers**
 in any ASP.NET Core 2.1 (and higher) and legacy ASP.NET 4.6.1 (and higher) applications.

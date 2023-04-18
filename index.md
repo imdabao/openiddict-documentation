@@ -1,38 +1,37 @@
 # OpenIddict
 
-### The OpenID Connect stack you'll be addicted to.
+### 这是一个让你沉迷的 OpenID Connect 技术栈。
 
 [![Build status](https://github.com/openiddict/openiddict-core/workflows/build/badge.svg?branch=dev&event=push)](https://github.com/openiddict/openiddict-core/actions?query=workflow%3Abuild+branch%3Adev+event%3Apush)
 
-## What's OpenIddict?
+## 什么是 OpenIddict？
 
-OpenIddict aims at providing a **versatile solution** to implement **OpenID Connect client, server and token validation support in any ASP.NET Core 2.1 (and higher) application**.
-**ASP.NET 4.6.1 (and higher) applications are also fully supported thanks to a native Microsoft.Owin 4.2 integration**.
+OpenIddict 旨在提供一个**多功能的解决方案**，以在**任何 ASP.NET Core 2.1（及更高版本）应用程序中实现 OpenID Connect 客户端、服务器和令牌验证支持**。
+**同时，由于使用了原生的 Microsoft.Owin 4.2 集成，因此也完全支持 ASP.NET 4.6.1（及更高版本）应用程序**。
 
-OpenIddict fully supports the **[code/implicit/hybrid flows](http://openid.net/specs/openid-connect-core-1_0.html)**,
-the **[client credentials/resource owner password grants](https://tools.ietf.org/html/rfc6749)** and the [device authorization flow](https://tools.ietf.org/html/rfc8628).
+OpenIddict 完全支持 **[code/implicit/hybrid flows](http://openid.net/specs/openid-connect-core-1_0.html)**、 **[client credentials/resource owner password grants](https://tools.ietf.org/html/rfc6749)** 以及 [device authorization flow](https://tools.ietf.org/html/rfc8628).
 
-OpenIddict natively supports **[Entity Framework Core](https://www.nuget.org/packages/OpenIddict.EntityFrameworkCore)**,
-**[Entity Framework 6](https://www.nuget.org/packages/OpenIddict.EntityFramework)** and **[MongoDB](https://www.nuget.org/packages/OpenIddict.MongoDb)**
-out-of-the-box and custom stores can be implemented to support other providers.
-
---------------
-
-## Getting started
-
-**Developers looking for a simple and turnkey solution are strongly encouraged to use [OrchardCore and its OpenID module](https://docs.orchardcore.net/en/latest/docs/reference/modules/OpenId/)**,
-which is based on OpenIddict, comes with sensible defaults and offers a built-in management GUI to easily register OpenID client applications.
-
-**To implement a custom OpenID Connect server using OpenIddict, read [Getting started](https://documentation.openiddict.com/guides/getting-started.html)**.
-
-**Samples demonstrating how to use OpenIddict with the different OAuth 2.0/OpenID Connect flows**
-can be found in the [dedicated repository](https://github.com/openiddict/openiddict-samples).
+OpenIddict 原生支持 **[Entity Framework Core](https://www.nuget.org/packages/OpenIddict.EntityFrameworkCore)**、
+**[Entity Framework 6](https://www.nuget.org/packages/OpenIddict.EntityFramework)** 和 **[MongoDB](https://www.nuget.org/packages/OpenIddict.MongoDb)**
+，并且可以实现自定义存储来支持其他提供者。
 
 --------------
 
-## Compatibility matrix
+## 快速上手
 
-| Web framework version | .NET runtime version | OpenIddict 4.x                          |
+**强烈建议寻求简单易用的解决方案的开发者使用 [OrchardCore and its OpenID module](https://docs.orchardcore.net/en/latest/docs/reference/modules/OpenId/)**，
+该模块基于 OpenIddict 构建，提供了合理的默认设置，并提供了内置管理 GUI 以便轻松注册 OpenID 客户端应用程序。
+
+**如果要使用 OpenIddict 实现自定义的 OpenID Connect 服务器，请阅读 [快速上手](https://documentation.openiddict.com/guides/getting-started.html)**.
+
+**演示如何将 OpenIddict 与不同的 OAuth 2.0/OpenID Connect 流程结合使用的示例**
+可以在[专用存储库](https://github.com/openiddict/openiddict-samples)中找到。
+
+--------------
+
+## 兼容性矩阵
+
+| Web 框架版本 | .NET 运行时版本 | OpenIddict 4.x                          |
 |-----------------------|----------------------|-----------------------------------------|
 | ASP.NET Core 2.1      | .NET Framework 4.6.1 | :heavy_check_mark: :information_source: |
 | ASP.NET Core 2.1      | .NET Framework 4.7.2 | :heavy_check_mark:                      |
@@ -49,43 +48,39 @@ can be found in the [dedicated repository](https://github.com/openiddict/openidd
 | Microsoft.Owin 4.2    | .NET Framework 4.7.2 | :heavy_check_mark:                      |
 | Microsoft.Owin 4.2    | .NET Framework 4.8   | :heavy_check_mark:                      |
 
-:exclamation: **Note: ASP.NET Core 2.1 on .NET Core 2.1 and ASP.NET Core 5.0 on .NET 5.0 are no longer supported by Microsoft. While OpenIddict 4.x can still be
-used on .NET Core 2.1 thanks to its .NET Standard 2.0 compatibility, users are strongly encouraged to migrate to ASP.NET Core/.NET 6.0**.
-ASP.NET Core 2.1 on .NET Framework 4.6.1 (and higher) is still fully supported.
+:exclamation: **注意：Microsoft 不再支持在 .NET Core 2.1 上运行的 ASP.NET Core 2.1 和在 .NET 5.0 上运行的 ASP.NET Core 5.0。虽然 OpenIddict 4.x 仍然可以在 .NET Core 2.1 上使用，因为它兼容 .NET Standard 2.0，但强烈建议用户迁移到 ASP.NET Core/.NET 6.0**。
+ASP.NET Core 2.1 在 .NET Framework 4.6.1（及更高版本）上仍然得到充分支持。
 
-:information_source: **Note: the following features are not available when targeting .NET Framework 4.6.1**:
- - X.509 development encryption/signing certificates: calling `AddDevelopmentEncryptionCertificate()` or `AddDevelopmentSigningCertificate()`
-will result in a `PlatformNotSupportedException` being thrown at runtime if no valid development certificate can be found and a new one must be generated.
- - X.509 ECDSA signing certificates/keys: calling `AddSigningCertificate()` or `AddSigningKey()`
-with an ECDSA certificate/key will always result in a `PlatformNotSupportedException` being thrown at runtime.
-
---------------
-
-## Certification
-
-Unlike many other identity providers, **OpenIddict is not a turnkey solution but a framework that requires writing custom code**
-to be operational (typically, at least an authorization controller), making it a poor candidate for the certification program.
-
-While a reference implementation could be submitted as-is, **this wouldn't guarantee that implementations deployed by OpenIddict users would be standard-compliant.**
-
-Instead, **developers are encouraged to execute the conformance tests against their own deployment** once they've implemented their own logic.
-
-> The samples repository contains [a dedicated sample](https://github.com/openiddict/openiddict-samples/tree/dev/samples/Contruum/Contruum.Server) specially designed to be used
-> with the OpenID Connect Provider Certification tool and demonstrate that OpenIddict can be easily used in a certified implementation. To allow executing the certification tests
-> as fast as possible, that sample doesn't include any membership or consent feature (two hardcoded identities are proposed for tests that require switching between identities).
+:information_source: **注意：当目标框架为 .NET Framework 4.6.1 时，以下功能不可用**：
+ - X.509 开发加密/签名证书：调用 `AddDevelopmentEncryptionCertificate()` 或 `AddDevelopmentSigningCertificate()`
+如果找不到有效的开发证书并且必须生成新证书，将导致在运行时抛出 `PlatformNotSupportedException`。
+ - X.509 ECDSA 签名证书/密钥：调用 `AddSigningCertificate()` 或 `AddSigningKey()`
+使用 ECDSA 证书/密钥将始终导致在运行时抛出 `PlatformNotSupportedException`。
 
 --------------
 
-## Resources
+## 认证
 
-**Looking for additional resources to help you get started with OpenIddict?** Don't miss these interesting blog posts:
+与许多其他身份提供者不同，**OpenIddict不是一个即插即用的解决方案，而是需要编写自定义代码**才能运行（通常至少需要一个授权控制器），这使它成为认证计划的不良候选者。
+
+虽然参考实现可以按原样提交，但**这并不能保证OpenIddict用户部署的实现符合标准**。
+
+相反，鼓励**开发人员在实现自己的逻辑后，针对自己的部署**执行一致性测试。
+
+> 样例代码仓库包含一个专门为 OpenID Connect 提供者认证工具设计的[专用示例](https://github.com/openiddict/openiddict-samples/tree/dev/samples/Contruum/Contruum.Server) ，以展示 OpenIddict 可以轻松用于认证实现的认证。为了尽快执行认证测试，该示例不包括任何成员身份或同意功能（对于需要在身份之间切换的测试提供了两个硬编码的身份）。
+
+--------------
+
+## 资源
+
+**你正在寻找更多资源来帮助你开始使用 OpenIddict 吗？** 不要错过这些有趣的博客文章：
 
 - **[OpenIddict 4.0 preview1 is out](https://kevinchalet.com/2022/06/22/openiddict-4-0-preview1-is-out/)** by [Kévin Chalet](https://github.com/kevinchalet)
-- **[Introducing the OpenIddict-powered providers](https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers/issues/694)** by [Kévin Chalet](https://github.com/kevinchalet)
-- **[Introducing the OpenIddict client](https://kevinchalet.com/2022/02/25/introducing-the-openiddict-client/)** by [Kévin Chalet](https://github.com/kevinchalet)
-- **[Secure a Blazor WASM ASP.NET Core hosted APP using BFF and OpenIddict](https://damienbod.com/2022/01/03/secure-a-blazor-wasm-asp-net-core-hosted-app-using-bff-and-openiddict/)** by [Damien Bowden](https://github.com/damienbod)
-- **[How to Secure ASP.NET Core Applications with OpenIddict Using Virto Commerce B2B eCommerce: Tech Case Study](https://virtocommerce.com/blog/how-to-secure-aspnet-core-applications-with-openiddict-using-virto-commerce-platform)** by [Virto Commerce](https://virtocommerce.com/)
-- **[OpenIddict 3.0 general availability](https://kevinchalet.com/2020/12/23/openiddict-3-0-general-availability/)** by [Kévin Chalet](https://github.com/kevinchalet)
+- **[介绍 OpenIddict 提供程序](https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers/issues/694)** by [Kévin Chalet](https://github.com/kevinchalet)
+- **[介绍 OpenIddict 客户端](https://kevinchalet.com/2022/02/25/introducing-the-openiddict-client/)** by [Kévin Chalet](https://github.com/kevinchalet)
+- **[使用 BFF 和 OpenIddict 来保护 Blazor WASM ASP.NET Core 托管应用程序](https://damienbod.com/2022/01/03/secure-a-blazor-wasm-asp-net-core-hosted-app-using-bff-and-openiddict/)** by [Damien Bowden](https://github.com/damienbod)
+- **[如何使用 Virto Commerce B2B 电子商务使用 OpenIddict 保护 ASP.NET 核心应用程序：技术案例研究](https://virtocommerce.com/blog/how-to-secure-aspnet-core-applications-with-openiddict-using-virto-commerce-platform)** by [Virto Commerce](https://virtocommerce.com/)
+- **[OpenIddict 3.0 正式发布](https://kevinchalet.com/2020/12/23/openiddict-3-0-general-availability/)** by [Kévin Chalet](https://github.com/kevinchalet)
 - **[Setting up an Authorization Server with OpenIddict](https://dev.to/robinvanderknaap/setting-up-an-authorization-server-with-openiddict-part-i-introduction-4jid)** by [Robin van der Knaap](https://dev.to/robinvanderknaap)
 - **[Introducing OpenIddict 3.0's first release candidate version](https://kevinchalet.com/2020/11/17/introducing-openiddict-3-0-s-first-release-candidate-version/)** by [Kévin Chalet](https://github.com/kevinchalet)
 - **[OpenIddict 3.0 beta6 is out](https://kevinchalet.com/2020/10/27/openiddict-3-0-beta6-is-out/)** by [Kévin Chalet](https://github.com/kevinchalet)
@@ -96,7 +91,7 @@ Instead, **developers are encouraged to execute the conformance tests against th
 - **[Adding OpenIddict 3.0 to an OWIN application](https://kevinchalet.com/2020/03/03/adding-openiddict-3-0-to-an-owin-application/)** by [Kévin Chalet](https://github.com/kevinchalet)
 - **[Creating an OpenID Connect server proxy with OpenIddict 3.0's degraded mode](https://kevinchalet.com/2020/02/18/creating-an-openid-connect-server-proxy-with-openiddict-3-0-s-degraded-mode/)** by [Kévin Chalet](https://github.com/kevinchalet)
 
-**OpenIddict-based projects maintained by third parties**:
+**由第三方维护的基于 OpenIddict 的项目**:
 
 - **[OrchardCore OpenID module](https://github.com/OrchardCMS/OrchardCore)**: turnkey OpenID Connect server and token validation solution, built with multitenancy in mind
 - **[OpenIddict UI](https://github.com/thomasduft/openiddict-ui)** by [Thomas Duft](https://github.com/thomasduft): headless UI for managing client applications and scopes
@@ -105,27 +100,27 @@ Instead, **developers are encouraged to execute the conformance tests against th
 
 --------------
 
-## Security policy
+## 安全策略
 
-Security issues and bugs should be reported privately by emailing security@openiddict.com.
-You should receive a response within 24 hours. If for some reason you do not, please follow up via email to ensure we received your original message.
+安全问题和漏洞应该通过发送电子邮件至security@openiddict.com进行私下报告。
+您应该在24小时内收到回复。如果由于某些原因您没有收到回复，请通过电子邮件跟进以确保我们收到了您的原始消息。
 
 --------------
 
-## Support
+## 支持
 
-If you need support, please make sure you [sponsor the project](https://github.com/sponsors/kevinchalet) before creating a GitHub ticket.
-If you're not a sponsor, you can post your questions on Gitter or StackOverflow:
+如果需要支持，请在创建 GitHub 工单之前确保 [赞助该项目](https://github.com/sponsors/kevinchalet) .
+如果您不是赞助者，可以在 Gitter 或 StackOverflow 上发布您的问题：
 
 - **Gitter: [https://gitter.im/openiddict/openiddict-core](https://gitter.im/openiddict/openiddict-core)**
 - **StackOverflow: [https://stackoverflow.com/questions/tagged/openiddict](https://stackoverflow.com/questions/tagged/openiddict)**
 
 --------------
 
-## Nightly builds
+## 夜间构建
 
-If you want to try out the latest features and bug fixes, there is a MyGet feed with nightly builds of OpenIddict.
-To reference the OpenIddict MyGet feed, **create a `NuGet.config` file** (at the root of your solution):
+如果您想尝试最新的功能和错误修复，可以使用 OpenIddict 的夜间构建 MyGet feed。
+要引用 OpenIddict MyGet feed，请**创建一个 `NuGet.config` 文件**（位于解决方案的根目录下）：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -139,11 +134,11 @@ To reference the OpenIddict MyGet feed, **create a `NuGet.config` file** (at the
 
 --------------
 
-## Contributors
+## 贡献者
 
-**OpenIddict** is actively maintained by **[Kévin Chalet](https://github.com/kevinchalet)**. Contributions are welcome and can be submitted using pull requests.
+**OpenIddict** 由 **[Kévin Chalet](https://github.com/kevinchalet)** 积极维护。 欢迎贡献。可以使用 pull requests 提交。
 
-**Special thanks to [our sponsors](https://github.com/sponsors/kevinchalet#sponsors) for their incredible support**:
+**特别感谢 [我们的赞助商](https://github.com/sponsors/kevinchalet#sponsors) 的大力支持：**:
 
 <a href="https://volosoft.com/"><img src="https://volosoft.com/assets/logos/volosoft-logo-dark.svg" width="500px" alt="Volosoft logo" /></a>
 
@@ -153,5 +148,5 @@ To reference the OpenIddict MyGet feed, **create a `NuGet.config` file** (at the
 
 ## License
 
-This project is licensed under the **Apache License**. This means that you can use, modify and distribute it freely.
-See [http://www.apache.org/licenses/LICENSE-2.0.html](http://www.apache.org/licenses/LICENSE-2.0.html) for more details.
+该项目使用 **Apache 许可证** 进行许可。这意味着您可以自由使用、修改和分发该项目。
+更多详情请参见 [http://www.apache.org/licenses/LICENSE-2.0.html](http://www.apache.org/licenses/LICENSE-2.0.html) 。

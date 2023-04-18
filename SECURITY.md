@@ -1,6 +1,6 @@
-# Security policy
+# 安全策略
 
-Security issues and bugs should be reported privately by emailing security@openiddict.com.
-You should receive a response within 24 hours. If for some reason you do not, please follow up via email to ensure we received your original message.
+安全问题和漏洞应该通过发送电子邮件至security@openiddict.com进行私下报告。
+您应该在24小时内收到回复。如果由于某些原因您没有收到回复，请通过电子邮件跟进以确保我们收到了您的原始消息。
 
-Please do not open GitHub issues for anything you think might have a security implication.
+请不要为您认为可能具有安全隐患的任何内容创建 GitHub 问题（issue）。
